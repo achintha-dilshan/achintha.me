@@ -18,8 +18,8 @@ export default function Contact() {
         <div className="flex items-center flex-col divide-y divide-white/20">
           <div className="flex flex-col items-center p-6">
             <div className="p-1 rounded-full bg-gradient-to-br from-white/60 to-white/40">
-              <div className="rounded-full object-cover overflow-hidden w-28">
-                <img src={avatar} alt="Profile Picture" />
+              <div className="rounded-full object-cover overflow-hidden size-28">
+                <img src={avatar} alt="Profile Picture" className="size-28" />
               </div>
             </div>
             <div className="flex flex-col items-center gap-1 mt-2">
