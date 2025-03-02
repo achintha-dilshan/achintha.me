@@ -9,6 +9,7 @@ import {
 
 import type { Route } from "./+types/root";
 import "./app.css";
+import ErrorLayout from "./layouts/ErrorLayout";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -22,6 +23,17 @@ export const links: Route.LinksFunction = () => [
     href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
   },
 ];
+
+export function meta({}: Route.MetaArgs) {
+  return [
+    { title: "Developer Portfolio | Achintha Dilshan" },
+    {
+      name: "description",
+      content:
+        "I'm Achintha, a web developer passionate about crafting clean, scalable web applications that deliver exceptional performance and a delightful user experience.",
+    },
+  ];
+}
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -62,14 +74,20 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
   }
 
   return (
-    <main className="pt-16 p-4 container mx-auto">
-      <h1>{message}</h1>
-      <p>{details}</p>
-      {stack && (
-        <pre className="w-full p-4 overflow-x-auto">
-          <code>{stack}</code>
-        </pre>
-      )}
-    </main>
+    <ErrorLayout>
+      <div className="mx-auto self-center">
+        <div className="text-center flex flex-col items-center gap-2 max-w-96">
+          <h1 className="text-7xl sm:text-9xl font-bold text-white/30">
+            {message}
+          </h1>
+          <p className="text-white/30  text-xl">{details}</p>
+          {stack && (
+            <pre className="w-full p-4 overflow-x-auto">
+              <code>{stack}</code>
+            </pre>
+          )}
+        </div>
+      </div>
+    </ErrorLayout>
   );
 }

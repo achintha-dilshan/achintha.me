@@ -1,0 +1,20 @@
+{
+  "data": [
+    {
+      "title": "Web Development",
+      "description": "Building custom, mobile-friendly websites tailored to your needs."
+    },
+    {
+      "title": "Bug Fixing",
+      "description": "Fixing bugs and issues on your existing websites."
+    },
+    {
+      "title": "API Development",
+      "description": "Building efficient and scalable APIs for your applications."
+    },
+    {
+      "title": "Mobile App Development",
+      "description": "Crafting high-performance mobile apps tailored to your needs."
+    }
+  ]
+}

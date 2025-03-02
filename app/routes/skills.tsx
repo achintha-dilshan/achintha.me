@@ -1,3 +1,5 @@
+import { motion } from "motion/react";
+
 import { FaHtml5 } from "react-icons/fa6";
 import { FaCss3Alt } from "react-icons/fa6";
 import { FaSass } from "react-icons/fa6";
@@ -14,7 +16,12 @@ import { FaGolang } from "react-icons/fa6";
 export default function Skills() {
   return (
     <div className="max-w-3xl mx-auto">
-      <ul className="grid grid-cols-[repeat(auto-fit,_minmax(160px,_1fr))] gap-2">
+      <motion.ul
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        className="grid grid-cols-[repeat(auto-fit,_minmax(160px,_1fr))] gap-2"
+      >
         <li className="bg-white/5 rounded-md p-4 flex flex-col items-center gap-2">
           <FaHtml5 className="size-8 text-white/50" />
           <div className="text-xs text-white/50">HTML</div>
@@ -63,7 +70,7 @@ export default function Skills() {
           <FaGolang className="size-8 text-white/50" />
           <div className="text-xs text-white/50">Go Lang</div>
         </li>
-      </ul>
+      </motion.ul>
     </div>
   );
 }

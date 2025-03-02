@@ -1,12 +1,20 @@
+import { motion } from "motion/react";
+
 import { IoLogoLinkedin } from "react-icons/io5";
 import { IoLogoGithub } from "react-icons/io5";
+import { FaWhatsapp } from "react-icons/fa6";
 
 import avatar from "/avatar.png";
 
 export default function Contact() {
   return (
     <div className="mx-auto self-center">
-      <div className="bg-gradient-to-br from-white/10 to-white/5 rounded-2xl p-8 w-fit min-w-60">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        className="bg-gradient-to-br from-white/10 to-white/5 rounded-2xl p-8 w-fit min-w-60"
+      >
         <div className="flex items-center flex-col divide-y divide-white/20">
           <div className="flex flex-col items-center p-6">
             <div className="p-1 rounded-full bg-gradient-to-br from-white/60 to-white/40">
@@ -35,6 +43,14 @@ export default function Contact() {
                     <IoLogoGithub className="size-5 text-white/50" />
                   </a>
                 </li>
+                <li>
+                  <a
+                    href="https://api.whatsapp.com/send?phone=94761231570"
+                    target="_blank"
+                  >
+                    <FaWhatsapp className="size-5 text-white/50" />
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
@@ -58,12 +74,14 @@ export default function Contact() {
               </li>
               <li className="leading-none text-center">
                 <div className="uppercase text-xs text-white/30">Location</div>
-                <span className="text-sm text-white/50">Colombo, Sri Lanka</span>
+                <span className="text-sm text-white/50">
+                  Colombo, Sri Lanka
+                </span>
               </li>
             </ul>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }
