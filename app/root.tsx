@@ -8,8 +8,9 @@ import {
 } from "react-router";
 
 import type { Route } from "./+types/root";
-import "./app.css";
 import ErrorLayout from "./layouts/ErrorLayout";
+import "./app.css";
+import avatar from "/avatar.png";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -31,6 +32,19 @@ export function meta({}: Route.MetaArgs) {
       name: "description",
       content:
         "I'm Achintha, a web developer passionate about crafting clean, scalable web applications that deliver exceptional performance and a delightful user experience.",
+    },
+    {
+      property: "og:title",
+      content: "Developer Portfolio | Achintha Dilshan",
+    },
+    {
+      property: "og:description",
+      content:
+        "I'm Achintha, a web developer passionate about crafting clean, scalable web applications that deliver exceptional performance and a delightful user experience.",
+    },
+    {
+      property: "og:image",
+      content: avatar,
     },
   ];
 }
